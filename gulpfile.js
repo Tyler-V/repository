@@ -6,11 +6,12 @@ const uglify = require('gulp-uglify');
 const concatCss = require('gulp-concat-css');
 const cleanCSS = require('gulp-clean-css');
 const htmlreplace = require('gulp-html-replace');
-const concatJs = require("gulp-concat");
+const concatJs = require('gulp-concat');
 const run = require('run-sequence');
 const tscConfig = require('./tsconfig.json');
 const Builder = require('systemjs-builder');
 const builder = new Builder('', 'systemjs.config.js');
+const time = new Date().getTime();
 
 // Clean source .ts
 gulp.task('clean:ts', function () {
@@ -23,15 +24,15 @@ gulp.task('compile:ts', ['clean:ts'], shell.task([
     'tsc'
 ]));
 
-// Bundle vendor.js
-gulp.task('bundle:vendor', function () {
-    return builder.buildStatic('app/vendor.js', 'build/vendor.min.js')
-        .catch(function (err) { console.error('vendor.js bundle error! ' + err); });
+// Bundle js plugins
+gulp.task('bundle:js', function () {
+    return builder.buildStatic('app/bundle.js', 'build/' + time + '.bundle.min.js')
+        .catch(function (err) { console.error('bundle.js bundle error! ' + err); });
 });
 
 // Bundle main.js
 gulp.task('bundle:main', function () {
-    return builder.buildStatic('app/main.js', 'build/main.min.js')
+    return builder.buildStatic('app/main.js', 'build/' + time + '.main.min.js')
         .catch(function (err) { console.error('main.js bundle error! ' + err); });
 });
 
@@ -40,15 +41,15 @@ gulp.task('concat:css', function () {
     var glob = ['resources/**/*.css', 'app/**/*.css'];
     return gulp
         .src(glob)
-        .pipe(concatCss("build/styles.min.css"))
+        .pipe(concatCss('build/' + time + '.styles.min.css'))
         .pipe(gulp.dest('.'));
 });
 
 // Concat js
 gulp.task('concat:js', function () {
     return gulp.src('build/**.js')
-        .pipe(concatJs("bundle.min.js"))
-        .pipe(gulp.dest("build"));
+        .pipe(concatJs('bundle.min.js'))
+        .pipe(gulp.dest('build'));
 });
 
 // Minify css
@@ -80,7 +81,7 @@ gulp.task('compile', function (callback) {
 });
 
 gulp.task('bundle', function (callback) {
-    run('bundle:vendor', 'bundle:main', function () {
+    run('bundle:js', 'bundle:main', function () {
         callback();
     });
 });
@@ -97,23 +98,19 @@ gulp.task('minify', function (callback) {
     });
 });
 
-gulp.task('remove', function () {
-    del(['build/**/*', '!build/bundle.min.js', '!build/styles.min.css']);
-});
-
 gulp.task('replace', function () {
     gulp.src('index.html')
         .pipe(htmlreplace({
-            'css': 'styles.min.css',
-            'vendor': 'vendor.min.js',
-            'main': 'main.min.js'
+            'css': time + '.styles.min.css',
+            'bundle': time + '.bundle.min.js',
+            'main': time + '.main.min.js'
         }))
         .pipe(gulp.dest('build'));
 });
 
 gulp.task('resources', function () {
-    return gulp.src(['./resources/**/*'], { base: "." })
-        .pipe(gulp.dest("build"));
+    return gulp.src(['./resources/**/*'], { base: '.' })
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('build', function () {
