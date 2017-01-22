@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  moduleId: module.id,
   selector: 'app',
-  templateUrl: 'app.component.html',
+  template: require('./app.component.html!text'),
+  styles: ['./app.component.css!text']
 })
+
 export class AppComponent {
   name = 'TRiBot Repository';
 }
