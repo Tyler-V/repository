@@ -1,30 +1,52 @@
+@background: #1e5799;
 #header {
-    clear: left;
+    z-index: 2;
+    position: relative;
     width: 100%;
     height: 40px;
     line-height: 20px;
-    background-color: #2264AE;
     color: #FFFFFF;
     padding: 10px 20px;
-    display: -webkit-flex;
-    display: flex;
+    background: -moz-linear-gradient(-45deg, #1e5799 0%, #2264ae 28%, #207cca 67%, #207cca 100%, #3498e5 100%);
+    background: -webkit-linear-gradient(-45deg, #1e5799 0%, #2264ae 28%, #207cca 67%, #207cca 100%, #3498e5 100%);
+    background: linear-gradient(135deg, #1e5799 0%, #2264ae 28%, #207cca 67%, #207cca 100%, #3498e5 100%);
+    border: 1px solid #1b599b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     .left {
-        width: 300px;
+        float: left;
+        height: 100%;
+        width: 200px;
         img {
             margin-right: 10px;
             position: relative;
             top: 3px;
+            right: 5px;
         }
         label {
             position: relative;
-            bottom: 7px;
+            top: 7px;
             font-size: 20px;
         }
     }
-    .center {
-        width: 100%;
-    }
     .right {
-        width: 300px;
+        float: right;
+        height: 100%;
+        width: 200px;
+        text-align: right;
+        position: relative;
+        right: 40px;
+        i {
+            position: relative;
+            top: 8px;
+            right: 5px;
+        }
+        label {
+            position: relative;
+            top: 2px;
+            font-size: 16px;
+        }
     }
 }

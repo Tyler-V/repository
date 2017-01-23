@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { SharedComponent } from './shared.component';
 
 @Component({
   selector: 'app',
@@ -6,4 +7,16 @@ import { Component } from '@angular/core';
   styles: [require('./app.component.css!text')]
 })
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+
+  constructor(private shared: SharedComponent) { }
+
+  ngOnInit() {
+    this.shared.setWindowDimensions();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.shared.setWindowDimensions();
+  }
+}

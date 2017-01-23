@@ -1,2 +1,29 @@
-<div id="navigation">
+<div id="navigation" class="transition shadow-2" [style.width.px]="shared.navigationWidth">
+    <div class="search-menu" [class.expanded]="shared.navigationWidth == maxWidth">
+        <div *ngIf="navigationOpen" class="search-text">
+            <i class="material-icons search-icon">search</i>
+            <input type="text" placeholder="Search" [(ngModel)]="searchText">
+        </div>
+        <i (click)="toggleNavigation()" class="material-icons menu-icon">menu</i>
+    </div>
+    <label *ngIf="navigationOpen" class="navigation-label">Navigation</label>
+    <div class="main-menu" [style.margin-top.px]="navigationOpen ? 15 : 0">
+        <div *ngFor="let menu of menus | filterBy: searchText">
+            <div class="menu-item">
+                <i (click)="toggleNavigation(menu)" class="material-icons">{{menu.glyphicon}}</i>
+                <label>{{menu.name}}</label>
+                <span *ngIf="menu.children != null">
+                    <i (click)="toggleChildren(menu)"class="material-icons expand">{{menu.expanded ? 'expand_more' : 'expand_less'}}</i>
+                </span>
+            </div>
+            <ng-container *ngIf="menu.children != null && menu.expanded">
+                <div *ngFor="let child of menu.children">
+                    <div class="menu-item-child">
+                        <i class="material-icons">subdirectory_arrow_right</i>
+                        <label>{{child.name}}</label>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
 </div>

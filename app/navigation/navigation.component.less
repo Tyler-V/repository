@@ -1,5 +1,121 @@
 #navigation {
-    width: 300px;
+    z-index: 1;
     height: 100%;
-    border: 1px solid red;
+    position: relative;
+    float: left;
+    background-color: #DDDDDD;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .search-menu {
+        margin-top: 10px;
+        height: 50px;
+        line-height: 70px;
+        text-align: center;
+        .search-text {
+            width: 175px;
+            .search-icon {
+                float: left;
+                width: 21px;
+                height: 21px;
+                font-size: 20px;
+                color: #8D8D8D;
+                position: relative;
+                top: 15px;
+                left: 9px;
+                border: 1px solid #8D8D8D;
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+            }
+            input[type=text] {
+                float: left;
+                width: 165px;
+                text-align: center;
+                position: relative;
+                bottom: 8px;
+                left: 31px;
+                height: 17px;
+            }
+        }
+        .menu-icon {
+            font-size: 30px;
+            color: #8D8D8D;
+            position: relative;
+            top: 2px;
+        }
+        &.expanded {
+            text-align: right;
+            padding-right: 10px;
+            .material-icons {
+                color: #2264AE;
+            }
+        }
+    }
+    label.navigation-label {
+        font-size: 12px;
+        position: relative;
+        left: 5px;
+        top: 12px;
+    }
+    .main-menu {
+        border-bottom: 1px solid #8D8D8D;
+        .menu-item {
+            width: 300px;
+            height: 40px;
+            padding: 0 20px;
+            border-top: 1px solid #8D8D8D;
+            .material-icons {
+                font-size: 20px;
+                position: relative;
+                top: 9px;
+            }
+            label {
+                font-size: 15px;
+                position: relative;
+                top: 5px;
+                left: 16px;
+            }
+            .expand {
+                float: right;
+                position: relative;
+                top: 0;
+                right: 69px;
+                height: 40px;
+                line-height: 40px;
+                width: 40px;
+                text-align: center;
+            }
+        }
+        .menu-item-child {
+            width: 300px;
+            height: 40px;
+            padding-left: 40px;
+            .material-icons {
+                font-size: 18px;
+                position: relative;
+                top: 9px;
+            }
+            label {
+                font-size: 15px;
+                position: relative;
+                top: 6px;
+                left: 16px;
+            }
+        }
+        .menu-item:hover,
+        .menu-item-child:hover {
+            color: #1e5799;
+            -webkit-box-shadow: inset 0px 0px 75px -15px rgba(0, 0, 0, 0.3);
+            -moz-box-shadow: inset 0px 0px 75px -15px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0px 0px 75px -15px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+#navigation:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }

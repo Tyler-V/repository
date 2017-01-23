@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styles: [require('./header.component.css!text')]
 })
 
-export class HeaderComponent {
-    
+export class HeaderComponent {    
 }
