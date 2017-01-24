@@ -1,10 +1,10 @@
 #navigation {
+  color: rgba(0, 0, 0, 0.87);
   z-index: 1;
   height: 100%;
   position: relative;
   float: left;
   background-color: #DDDDDD;
-  border: 1px solid rgba(0, 0, 0, 0.23);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -12,104 +12,147 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
-#navigation .search-menu {
+#navigation .top-menu {
   margin-top: 10px;
-  height: 50px;
-  line-height: 70px;
-  text-align: center;
+  height: 40px;
 }
-#navigation .search-menu .search-text {
-  width: 175px;
+#navigation .top-menu .menu-icon {
+  font-size: 30px;
+  position: relative;
+  left: 15px;
 }
-#navigation .search-menu .search-text .search-icon {
+#navigation .top-menu.expanded {
+  height: 70px;
+  text-align: right;
+  padding-right: 10px;
+}
+#navigation .top-menu.expanded .menu-icon {
+  float: right;
+  left: 0;
+  color: #2264AE;
+}
+#navigation .top-menu label.navigation-label {
+  float: left;
+  position: relative;
+  font-size: 13px;
+  height: 30px;
+  color: #2264AE;
+  left: 10px;
+  top: 9px;
+}
+#navigation .top-menu .search {
+  float: left;
+  width: calc(100% - 10px);
+  position: relative;
+  border-top: 1px solid #8D8D8D;
+  padding: 10px;
+  top: 10px;
+}
+#navigation .top-menu .search .search-icon {
   float: left;
   width: 21px;
   height: 21px;
   font-size: 20px;
   color: #8D8D8D;
   position: relative;
-  top: 15px;
-  left: 9px;
   border: 1px solid #8D8D8D;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-#navigation .search-menu .search-text input[type=text] {
+#navigation .top-menu .search input[type=text] {
   float: left;
-  width: 165px;
+  width: calc(88%);
   text-align: center;
   position: relative;
-  bottom: 8px;
-  left: 31px;
+  right: 1px;
   height: 17px;
-}
-#navigation .search-menu .menu-icon {
-  font-size: 30px;
-  color: #8D8D8D;
-  position: relative;
-  top: 2px;
-}
-#navigation .search-menu.expanded {
-  text-align: right;
-  padding-right: 10px;
-}
-#navigation .search-menu.expanded .material-icons {
-  color: #2264AE;
-}
-#navigation label.navigation-label {
-  font-size: 12px;
-  position: relative;
-  left: 5px;
-  top: 12px;
 }
 #navigation .main-menu {
   border-bottom: 1px solid #8D8D8D;
 }
-#navigation .main-menu .menu-item {
-  width: 300px;
+#navigation .main-menu .menu-container .menu-item {
+  width: 250px;
   height: 40px;
-  padding: 0 20px;
   border-top: 1px solid #8D8D8D;
 }
-#navigation .main-menu .menu-item .material-icons {
+#navigation .main-menu .menu-container .menu-item .material-icons {
+  height: 40px;
+  width: 60px;
   font-size: 20px;
   position: relative;
-  top: 9px;
+  text-align: center;
+  line-height: 40px;
 }
-#navigation .main-menu .menu-item label {
+#navigation .main-menu .menu-container .menu-item label {
   font-size: 15px;
   position: relative;
-  top: 5px;
-  left: 16px;
+  height: 40px;
+  bottom: 4px;
 }
-#navigation .main-menu .menu-item .expand {
+#navigation .main-menu .menu-container .menu-item .expand-icon {
   float: right;
   position: relative;
-  top: 0;
-  right: 69px;
-  height: 40px;
-  line-height: 40px;
   width: 40px;
   text-align: center;
 }
-#navigation .main-menu .menu-item-child {
-  width: 300px;
+#navigation .main-menu .menu-container .menu-item .expand-icon.expanded {
+  color: #2264AE;
+}
+#navigation .main-menu .menu-container .menu-item.expanded {
+  background-color: #c9c9c9;
+  color: #2264AE;
+  border-bottom: 1px solid #8D8D8D;
+  border-top: 1px solid #2264AE;
+}
+#navigation .main-menu .menu-container .menu-item.expanded label {
+  color: rgba(0, 0, 0, 0.87);
+}
+#navigation .main-menu .menu-container .menu-item.expanded:hover * {
+  color: #2264AE;
+}
+#navigation .main-menu .menu-container .menu-item.selected {
+  background-color: #2264AE;
+  color: #FFFFFF;
+}
+#navigation .main-menu .menu-container .menu-item.selected:hover {
+  color: #FFFFFF;
+  box-shadow: none;
+}
+#navigation .main-menu .menu-container .menu-item-child {
+  width: calc(100%-40px);
   height: 40px;
   padding-left: 40px;
+  background-color: #c9c9c9;
+  border-bottom: 1px solid #8D8D8D;
 }
-#navigation .main-menu .menu-item-child .material-icons {
+#navigation .main-menu .menu-container .menu-item-child .material-icons {
   font-size: 18px;
   position: relative;
   top: 9px;
+  color: #2264AE;
 }
-#navigation .main-menu .menu-item-child label {
+#navigation .main-menu .menu-container .menu-item-child label {
   font-size: 15px;
   position: relative;
   top: 6px;
   left: 16px;
 }
-#navigation .main-menu .menu-item:hover,
-#navigation .main-menu .menu-item-child:hover {
+#navigation .main-menu .menu-container .menu-item-child:last-child {
+  border-bottom: none;
+}
+#navigation .main-menu .menu-container .menu-item-child.selected {
+  background-color: #2264AE;
+  color: #FFFFFF;
+}
+#navigation .main-menu .menu-container .menu-item-child.selected .material-icons {
+  color: #FFFFFF;
+}
+#navigation .main-menu .menu-container .menu-item-child.selected:hover {
+  color: #FFFFFF;
+  box-shadow: none;
+}
+#navigation .main-menu .menu-container .menu-item:hover,
+#navigation .main-menu .menu-container .menu-item-child:hover {
   color: #1e5799;
   -webkit-box-shadow: inset 0px 0px 75px -15px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 0px 75px -15px rgba(0, 0, 0, 0.3);

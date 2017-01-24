@@ -10,6 +10,7 @@ import { IMenu, IMenuChild } from './menu.d';
 
 export class NavigationComponent {
 
+  currentMenu: IMenu;
   searchText: string = "";
   minWidth: number = 60;
   maxWidth: number = 250;
@@ -18,38 +19,32 @@ export class NavigationComponent {
   menus: IMenu[] = [{
     name: 'Latest News',
     glyphicon: 'info',
-    route: '',
-    children: null
+    route: ''
   },
   {
     name: 'Homepage',
     glyphicon: 'home',
-    route: '',
-    children: null
+    route: ''
   },
   {
     name: 'Forums',
     glyphicon: 'forum',
-    route: '',
-    children: null
+    route: ''
   },
   {
-    name: 'Download TRiBot',
+    name: 'TRiBot',
     glyphicon: 'file_download',
-    route: '',
-    children: null
+    route: ''
   },
   {
     name: 'Scripts',
     glyphicon: 'shopping_cart',
-    route: '',
-    children: null
+    route: ''
   },
   {
     name: 'User Panel',
     glyphicon: 'account_box',
     route: '',
-    expanded: false,
     children: [{
       name: 'Home',
       route: ''
@@ -80,7 +75,6 @@ export class NavigationComponent {
     name: 'Scripter Panel',
     glyphicon: 'build',
     route: '',
-    expanded: false,
     children: [{
       name: 'Home',
       route: ''
@@ -107,7 +101,6 @@ export class NavigationComponent {
     name: 'Administrator Panel',
     glyphicon: 'supervisor_account',
     route: '',
-    expanded: false,
     children: [{
       name: 'Home',
       route: ''
@@ -138,12 +131,28 @@ export class NavigationComponent {
       this.closeChildren();
       this.shared.navigationWidth = this.minWidth;
       this.navigationOpen = false;
+      this.searchText = "";
     }
     else {
       this.shared.navigationWidth = this.maxWidth;
       setTimeout(() => {
         this.navigationOpen = true;
       }, 300);
+    }
+  }
+
+  onMenuClick(menu: any) {
+    if (menu.children != null) {
+      if (menu.expanded) {
+        menu.expanded = false;
+      } else {
+        this.closeChildren();
+        menu.expanded = true;;
+      }
+    } else {
+      this.deselectMenus();
+      menu.selected = !menu.selected;
+      this.currentMenu = menu;
     }
   }
 
@@ -154,9 +163,22 @@ export class NavigationComponent {
     })
   }
 
-  toggleChildren(menu: IMenu) {
-    let expanded: boolean = menu.expanded;
-    this.closeChildren();
-    menu.expanded = !expanded;
+  isMenuExpanded(menu: any) {
+    return menu.expanded != null && menu.expanded;
+  }
+
+  deselectMenus() {
+    this.menus.forEach(menu => {
+      if (menu.children != null) {
+        menu.children.forEach(child => {
+          child.selected = false;
+        });
+      }
+      menu.selected = false;
+    })
+  }
+
+  isMenuSelected(menu: any) {
+    return menu.selected != null && menu.selected;
   }
 }
