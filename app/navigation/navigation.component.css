@@ -1,7 +1,7 @@
 #navigation {
   color: rgba(0, 0, 0, 0.87);
   z-index: 1;
-  height: 100%;
+  height: calc(100% - 60px);
   position: relative;
   float: left;
   background-color: #DDDDDD;
@@ -102,7 +102,6 @@
   background-color: #c9c9c9;
   color: #2264AE;
   border-bottom: 1px solid #8D8D8D;
-  border-top: 1px solid #2264AE;
 }
 #navigation .main-menu .menu-container .menu-item.expanded label {
   color: rgba(0, 0, 0, 0.87);

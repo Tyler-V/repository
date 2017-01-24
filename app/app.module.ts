@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
+import { ScriptComponent } from './content/script/script.component';
 
 // Shared 
 import { SharedComponent } from './shared.component';
 
 // Pipes
 import { FilterByPipe } from './pipes/filterBy.pipe';
+import { RepeatPipe } from './pipes/repeat.pipe';
 
 @NgModule({
   imports: [
@@ -23,10 +25,11 @@ import { FilterByPipe } from './pipes/filterBy.pipe';
   ],
   declarations: [
     AppComponent,
+    ContentComponent,
+    FilterByPipe, RepeatPipe,
     HeaderComponent,
     NavigationComponent,
-    ContentComponent,
-    FilterByPipe
+    ScriptComponent
   ],
   providers: [
     SharedComponent

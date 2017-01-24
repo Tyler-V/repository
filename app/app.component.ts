@@ -15,8 +15,9 @@ export class AppComponent implements OnInit {
     this.shared.setWindowDimensions();
   }
 
-  @HostListener('window:resize', ['$event'])
+  @HostListener('document:resize', ['$event'])
   onResize(event: any) {
     this.shared.setWindowDimensions();
+    this.shared.windowResizeEvent.emit();
   }
 }

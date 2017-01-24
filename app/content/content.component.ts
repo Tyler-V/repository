@@ -9,5 +9,8 @@ import { SharedComponent } from '../shared.component';
 
 export class ContentComponent {
 
+  width: number = this.shared.windowWidth - this.shared.navigationWidth - 40;
+
   constructor(private shared: SharedComponent) { }
+
 }

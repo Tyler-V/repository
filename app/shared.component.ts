@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter  } from '@angular/core';
 
 @Injectable()
 export class SharedComponent {
+
+    windowResizeEvent: EventEmitter<any> = new EventEmitter(); 
 
     navigationWidth: number;
 

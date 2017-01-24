@@ -1,5 +1,13 @@
 #content {
-    height: 100%;
-    position: relative;
+    position: absolute;
+    height: ~'calc(100% - 102px)';
     background-color: darkgray;
+    padding: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    #container {
+        position: relative;
+        min-width: 600px;
+    }
 }
