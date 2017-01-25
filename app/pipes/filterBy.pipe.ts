@@ -12,12 +12,21 @@ export class FilterByPipe implements PipeTransform {
         search = search.toLowerCase();
         return objects.filter(object => {
             for (let property in object) {
-                if (object.hasOwnProperty(property)) {
-                    if (property != null && typeof property == 'string') {
-                        let text = object[property].toLowerCase();
-                        let contains = text.indexOf(search) !== -1;
-                        return contains;
+                if (Array.isArray(object[property])) {
+                    let children = object[property];
+                    for (let child of children) {
+                        if (child.hasOwnProperty('name')) {
+                            let text = child['name'].toLowerCase();
+                            let contains = text.indexOf(search) !== -1;
+                            if (contains)
+                                return true;
+                        }
                     }
+                } else if (typeof object[property] == 'string') {
+                    let text = object[property].toLowerCase();
+                    let contains = text.indexOf(search) !== -1;
+                    if (contains)
+                        return true;
                 }
             }
         });

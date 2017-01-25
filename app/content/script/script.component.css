@@ -53,7 +53,6 @@
 .flex .card .footer .pricing .price {
   /*color: #078e00;*/
   font-size: 18px;
-  font-weight: bold;
 }
 .flex .card .footer .pricing .duration {
   font-size: 10px;
@@ -90,5 +89,5 @@
   background: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2264AE;
+  background: #C1C1C1;
 }
