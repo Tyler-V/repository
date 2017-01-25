@@ -9,7 +9,7 @@ import { SharedComponent } from '../../shared.component';
 
 export class ScriptComponent implements OnDestroy {
 
-  repeat: number = 30;
+  repeat: number = 40;
   colors: any = [];
 
   maxWidth: number = this.shared.windowWidth - this.shared.navigationWidth - 40;
@@ -17,18 +17,21 @@ export class ScriptComponent implements OnDestroy {
 
   constructor(private shared: SharedComponent) {
     this.windowResizeSubscription = this.shared.windowResizeEvent.subscribe(() => { });
-    for (let i = 0; i < this.repeat; i++) {
-      this.colors.push("rgb(" + this.random(0, 255) + "," + this.random(0, 255) + "," + this.random(0, 255) + ")");
-    }
+    this.setColors();
   }
 
   ngOnDestroy() {
     this.windowResizeSubscription.unsubscribe();
   }
 
-  random(min: number, max: number) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
+  setColors() {
+    function random(min: number, max: number) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+    for (let i = 0; i < this.repeat; i++) {
+      this.colors.push("rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")");
+    }
   }
 }

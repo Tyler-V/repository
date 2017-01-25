@@ -5,14 +5,93 @@
     justify-content: center;
     .card {
         flex: auto;
-        height: 200px;
-        width: 300px;
-        margin: 10px;
-        padding: 10px;
-        /*border: 1px solid #DDDDDD;*/
-        background-color: #DDDDDD;
+        height: 100%;
+        min-width: 330px;
+        max-width: 330px;
+        margin: 15px;
+        background-color: #FFFFFF;
+        border: 1px solid #8D8D8D;
         &:hover {
             box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
         }
+        .title {
+            padding: 15px 0;
+            text-align: center;
+            font-size: 30px;
+            border-bottom: 1px solid #8D8D8D;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #FFFFFF;
+        }
+        .body {
+            height: 150px;
+            border-bottom: 1px solid #8D8D8D;
+            .description {
+                height: 130px;
+                overflow: auto;
+                padding: 10px;
+                word-break: break-word;
+                background-color: #e8e8e8;
+            }
+        }
+        .footer {
+            height: 50px;
+            .pricing {
+                float: left;
+                position: relative;
+                top: 7px;
+                left: 15px;
+                .price {
+                    /*color: #078e00;*/
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .duration {
+                    font-size: 10px;
+                    position: relative;
+                    left: 3px;
+                }
+            }
+            .actions {
+                float: right;
+                position: relative;
+                top: 7px;
+                right: 15px;
+                .info-icon {
+                    font-size: 35px;
+                    color: #2264AE;
+                    cursor: pointer;
+                    margin-right: 3px;
+                }
+                .add-icon {
+                    font-size: 35px;
+                    color: #2264AE;
+                    cursor: pointer;
+                }
+                .remove-icon {
+                    font-size: 35px;
+                    color: #e02626;
+                    cursor: pointer;
+                }
+            }
+        }
     }
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2264AE;
 }
