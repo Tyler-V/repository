@@ -1,5 +1,58 @@
-.flex {
+.search {
+  flex: auto;
+  height: 200px;
+  background-color: #DDDDDD;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border: 1px solid #8D8D8D;
+  overflow: hidden;
+}
+.search .game {
+  padding: 10px;
+  border-bottom: 1px solid #8D8D8D;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.search .game div {
+  flex: auto;
+  height: 30px;
+  line-height: 30px;
+  min-width: 80px;
+  max-width: 80px;
+  margin: 10px;
+  text-align: center;
+  color: #A2A2A2;
+  background-color: #FFFFFF;
+  border: 1px solid #A9A9A9;
+  border-radius: 4px;
+}
+.search .game div:hover {
+  box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+.search input {
+  width: 150px;
+  text-align: center;
+  position: relative;
+}
+.search:hover {
+  box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
+}
+.flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -11,8 +64,8 @@
 .flex .card {
   flex: auto;
   height: 100%;
-  min-width: 330px;
-  max-width: 330px;
+  min-width: 325px;
+  max-width: 325px;
   margin: 15px;
   background-color: #FFFFFF;
   border: 1px solid #8D8D8D;
@@ -67,14 +120,22 @@
 }
 .flex .card .footer .actions .info-icon {
   font-size: 35px;
-  color: #2264AE;
+  color: #8D8D8D;
   cursor: pointer;
   margin-right: 3px;
+}
+.flex .card .footer .actions .info-icon:hover {
+  box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
+  border-radius: 25px;
 }
 .flex .card .footer .actions .add-icon {
   font-size: 35px;
   color: #2264AE;
   cursor: pointer;
+}
+.flex .card .footer .actions .add-icon:hover {
+  box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
+  border-radius: 25px;
 }
 .flex .card .footer .actions .remove-icon {
   font-size: 35px;

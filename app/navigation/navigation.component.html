@@ -4,7 +4,7 @@
         <label *ngIf="navigationOpen" class="navigation-label">NAVIGATION</label>
         <div *ngIf="navigationOpen" class="search">
             <i class="material-icons search-icon">search</i>
-            <input type="text" placeholder="Search" [(ngModel)]="searchText">
+            <input type="text" placeholder="Search" [(ngModel)]="searchText" (keyup)="onSearch($event)">
         </div>
     </div>
     <div class="main-menu" [style.margin-top.px]="navigationOpen ? 15 : 0">

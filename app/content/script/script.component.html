@@ -1,4 +1,19 @@
 <div class="flex">
+    <div class="search">
+        <div class="game">
+            <div class="All">All</div>
+            <div class="Oldschool">Oldschool</div>
+            <div class="RS3">RS3</div>
+        </div>
+    </div>
+    <!--<div class="text">
+        <input type="text" placeholder="Name" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+        <input type="text" placeholder="Description" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+        <input type="text" placeholder="Author" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+    </div>-->
+</div>
+
+<div class="flex">
     <div *ngFor="let r of repeat | repeat; let i = index;" class="card shadow-1">
         <div class="title" [style.background-color]="colors[i]">Lorem Ipsum</div>
         <div class="body">
@@ -19,11 +34,9 @@
                 <div class="duration">Per Month</div>
             </div>
             <div class="actions">
-                <i class="material-icons add-icon" [style.color]="colors[i]">add_circle</i>
-                <!--
                 <i class="material-icons info-icon">info</i>
-                <i class="material-icons remove-icon">remove_circle</i>
-                -->
+                <i class="material-icons add-icon" [style.color]="colors[i]">add_circle</i>
+                <!--<i class="material-icons remove-icon">remove_circle</i>-->
             </div>
         </div>
     </div>

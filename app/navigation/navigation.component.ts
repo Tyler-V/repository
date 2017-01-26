@@ -10,6 +10,7 @@ import { IMenu, IMenuChild } from './menu.d';
 
 export class NavigationComponent {
 
+  stateBeforeSearch: IMenu[];
   currentMenu: IMenu;
   searchText: string = "";
   minWidth: number = 60;
@@ -180,5 +181,20 @@ export class NavigationComponent {
 
   isMenuSelected(menu: any) {
     return menu.selected != null && menu.selected;
+  }
+
+  onSearch(event: any) {
+    if (this.stateBeforeSearch == null) {
+      this.stateBeforeSearch = JSON.parse(JSON.stringify(this.menus));
+    }
+    if (this.searchText.trim().length > 0) {
+      this.menus.forEach(menu => {
+        if (menu.children != null && !menu.expanded)
+          menu.expanded = true;
+      });
+    } else {
+      this.menus = JSON.parse(JSON.stringify(this.stateBeforeSearch));
+      this.stateBeforeSearch = null;
+    }
   }
 }
