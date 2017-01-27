@@ -1,16 +1,53 @@
 <div class="flex">
-    <div class="search">
-        <div class="game">
-            <div class="All">All</div>
-            <div class="Oldschool">Oldschool</div>
-            <div class="RS3">RS3</div>
+    <div class="container">
+        <div class="game flex">
+            <input type="button" value="All">
+            <input type="button" value="Oldschool">
+            <input type="button" value="RS3">
+        </div>
+        <div class="text flex">
+            <input type="text" placeholder="Name" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+            <input type="text" placeholder="Description" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+            <input type="text" placeholder="Author" [(ngModel)]="searchText" (keyup)="onSearch($event)">
+        </div>
+        <div class="select flex">
+            <select>
+                <option value="Category" disabled>Category</option>
+                <option value="all">All</option>
+                <option value="agility">Agility</option>
+                <option value="combat">Combat</option>
+                <option value="construction">Construction</option>
+                <option value="cooking">Cooking</option>
+                <option value="crafting">Crafting</option>
+                <option value="divination">Divination</option>
+                <option value="dungeoneering">Dungeoneering</option>
+                <option value="farming">Farming</option>
+                <option value="firemaking">Firemaking</option>
+                <option value="fishing">Fishing</option>
+                <option value="fletching">Fletching</option>
+                <option value="herblore">Herblore</option>
+                <option value="hunter">Hunter</option>
+                <option value="magic">Magic</option>
+                <option value="mining">Mining</option>
+                <option value="mini_games">Mini-games</option>
+                <option value="money_making">Money Making</option>
+                <option value="prayer">Prayer</option>
+                <option value="quests">Quests</option>
+                <option value="ranged">Ranged</option>
+                <option value="runecrafting">Runecrafting</option>
+                <option value="slayer">Slayer</option>
+                <option value="smithing">Smithing</option>
+                <option value="thieving">Thieving</option>
+                <option value="tools">Tools</option>
+                <option value="woodcutting">Woodcutting</option>
+            </select>
+            <select>
+                <option value="Price" disabled>Price</option>
+                <option value="Free">Free</option>
+                <option value="Premium">Premium</option>
+            </select>
         </div>
     </div>
-    <!--<div class="text">
-        <input type="text" placeholder="Name" [(ngModel)]="searchText" (keyup)="onSearch($event)">
-        <input type="text" placeholder="Description" [(ngModel)]="searchText" (keyup)="onSearch($event)">
-        <input type="text" placeholder="Author" [(ngModel)]="searchText" (keyup)="onSearch($event)">
-    </div>-->
 </div>
 
 <div class="flex">

@@ -1,15 +1,4 @@
-.search {
-  flex: auto;
-  height: 200px;
-  background-color: #DDDDDD;
-  overflow-y: auto;
-  margin-bottom: 15px;
-  border: 1px solid #8D8D8D;
-  overflow: hidden;
-}
-.search .game {
-  padding: 10px;
-  border-bottom: 1px solid #8D8D8D;
+.flex {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -21,28 +10,55 @@
   align-items: center;
   justify-content: center;
 }
-.search .game div {
+.container {
   flex: auto;
-  height: 30px;
-  line-height: 30px;
+  height: 100%;
+  background-color: #DDDDDD;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border: 1px solid #8D8D8D;
+  overflow: hidden;
+}
+.container .game {
+  padding: 10px 10px 5px 10px;
+  border-bottom: 1px solid #8D8D8D;
+}
+.container .game input[type=button] {
+  flex: auto;
+  height: 31px;
   min-width: 80px;
   max-width: 80px;
-  margin: 10px;
+  margin: 0 10px 5px 10px;
   text-align: center;
   color: #A2A2A2;
   background-color: #FFFFFF;
   border: 1px solid #A9A9A9;
-  border-radius: 4px;
 }
-.search .game div:hover {
+.container .game input[type=button]:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
 }
-.search input {
-  width: 150px;
+.container .text {
+  padding: 10px 10px 5px 10px;
+  border-bottom: 1px solid #8D8D8D;
+}
+.container .text input {
+  height: 25px;
+  width: 156px;
   text-align: center;
   position: relative;
+  margin: 0 10px 5px 10px;
 }
-.search:hover {
+.container .select {
+  padding: 10px 10px 5px 10px;
+}
+.container .select select {
+  height: 31px;
+  width: 160px;
+  text-align-last: center;
+  color: #9C9C9C;
+  margin: 0 10px 5px 10px;
+}
+.container:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
 }
 .flex {
