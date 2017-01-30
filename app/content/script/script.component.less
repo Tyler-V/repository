@@ -1,175 +1,225 @@
-        .flex {
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -moz-flex;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .container {
-            flex: auto;
-            height: 100%;
-            background-color: #DDDDDD;
-            overflow-y: auto;
-            margin-bottom: 15px;
-            border: 1px solid #8D8D8D;
-            overflow: hidden;
-            .game {
-                padding: 10px 10px 5px 10px;
-                border-bottom: 1px solid #8D8D8D;
-                input[type=button] {
-                    flex: auto;
-                    height: 31px;
-                    min-width: 80px;
-                    max-width: 80px;
-                    margin: 0 10px 5px 10px;
-                    text-align: center;
-                    color: #A2A2A2;
-                    background-color: #FFFFFF;
-                    border: 1px solid #A9A9A9;
-                    &:hover {
-                        box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
-                    }
-                }
+            .flex {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
             }
-            .text {
-                padding: 10px 10px 5px 10px;
-                border-bottom: 1px solid #8D8D8D;
-                input {
-                    height: 25px;
-                    width: 156px;
-                    text-align: center;
-                    position: relative;
-                    margin: 0 10px 5px 10px;
-                }
-            }
-            .select {
-                padding: 10px 10px 5px 10px;
-                select {
-                    height: 31px;
-                    width: 160px;
-                    text-align-last: center;
-                    color: #9C9C9C;
-                    margin: 0 10px 5px 10px;
-                }
-            }
-            &:hover {
-                box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
-            }
-        }
-        
-        .flex {
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -moz-flex;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            .card {
+            
+            .search-container {
                 flex: auto;
                 height: 100%;
-                min-width: 325px;
-                max-width: 325px;
-                margin: 15px;
-                background-color: #FFFFFF;
+                background-color: #DDDDDD;
+                overflow-y: auto;
+                margin-bottom: 15px;
                 border: 1px solid #8D8D8D;
+                overflow: hidden;
+                .game {
+                    padding: 10px 10px 5px 10px;
+                    border-bottom: 1px solid #8D8D8D;
+                    input[type=button] {
+                        flex: auto;
+                        height: 31px;
+                        min-width: 80px;
+                        max-width: 80px;
+                        margin: 0 10px 5px 10px;
+                        text-align: center;
+                        color: #A2A2A2;
+                        background-color: #FFFFFF;
+                        border: 1px solid #A9A9A9;
+                        &:hover {
+                            box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
+                        }
+                    }
+                }
+                .text {
+                    padding: 10px 10px 5px 10px;
+                    border-bottom: 1px solid #8D8D8D;
+                    input {
+                        height: 25px;
+                        width: 156px;
+                        text-align: center;
+                        position: relative;
+                        margin: 0 10px 5px 10px;
+                    }
+                }
+                .select {
+                    padding: 10px 10px 5px 10px;
+                    select {
+                        height: 31px;
+                        width: 160px;
+                        text-align-last: center;
+                        color: #9C9C9C;
+                        margin: 0 10px 5px 10px;
+                    }
+                }
                 &:hover {
                     box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
                 }
-                .title {
-                    padding: 15px 0;
-                    text-align: center;
-                    font-size: 30px;
-                    border-bottom: 1px solid #8D8D8D;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    color: #FFFFFF;
-                }
-                .body {
-                    height: 150px;
-                    border-bottom: 1px solid #8D8D8D;
-                    .description {
-                        height: 130px;
-                        overflow: auto;
-                        padding: 10px;
-                        word-break: break-word;
-                        background-color: #e8e8e8;
+            }
+            
+            .card-container {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -moz-flex;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                .card {
+                    flex: auto;
+                    height: 100%;
+                    min-width: 425px;
+                    max-width: 425px;
+                    margin: 15px;
+                    background-color: #FFFFFF;
+                    border: 1px solid #8D8D8D;
+                    &:hover {
+                        box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
                     }
-                }
-                .footer {
-                    height: 50px;
-                    .pricing {
-                        float: left;
-                        position: relative;
-                        top: 7px;
-                        left: 15px;
-                        .price {
-                            /*color: #078e00;*/
-                            font-size: 18px;
-                        }
-                        .duration {
-                            font-size: 10px;
+                    .title {
+                        height: 30px;
+                        line-height: 30px;
+                        padding: 5px 5px 0 5px;
+                        text-align: center;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #FFFFFF;
+                        label {
                             position: relative;
-                            left: 3px;
+                            top: 3px;
+                            font-size: 24px;
+                            margin-right: 10px;
                         }
                     }
-                    .actions {
-                        float: right;
-                        position: relative;
-                        top: 7px;
-                        right: 15px;
-                        .info-icon {
-                            font-size: 35px;
-                            color: #8D8D8D;
-                            cursor: pointer;
-                            margin-right: 3px;
-                            &:hover {
-                                box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
-                                border-radius: 25px;
+                    .author {
+                        text-align: right;
+                        border-bottom: 1px solid #8D8D8D;
+                        height: 15px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #FFFFFF;
+                        label {
+                            position: relative;
+                            bottom: 5px;
+                            right: 3px;
+                            font-size: 12px;
+                        }
+                    }
+                    .body {
+                        height: 150px;
+                        border-bottom: 1px solid #8D8D8D;
+                        .image {
+                            float: left;
+                            height: 150px;
+                            width: 150px;
+                            border-right: 1px solid #8D8D8D;
+                        }
+                        .description {
+                            height: 130px;
+                            overflow: auto;
+                            padding: 10px;
+                            background-color: #e8e8e8;
+                            font-size: 13px;
+                            word-break: break-word;
+                        }
+                    }
+                    .footer {
+                        height: 50px;
+                        .pricing {
+                            float: left;
+                            position: relative;
+                            top: 7px;
+                            left: 15px;
+                            .price {
+                                /*color: #078e00;*/
+                                font-size: 18px;
+                            }
+                            .duration {
+                                font-size: 10px;
+                                position: relative;
+                                left: 3px;
                             }
                         }
-                        .add-icon {
-                            font-size: 35px;
-                            color: #2264AE;
-                            cursor: pointer;
-                            &:hover {
-                                box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
-                                border-radius: 25px;
+                        .actions {
+                            float: right;
+                            position: relative;
+                            top: 7px;
+                            right: 15px;
+                            .info-icon {
+                                font-size: 35px;
+                                color: #CCCCCC;
+                                cursor: pointer;
+                                margin-right: 3px;
+                                &:hover {
+                                    box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
+                                    border-radius: 25px;
+                                }
+                            }
+                            .add-icon {
+                                font-size: 35px;
+                                color: #2264AE;
+                                cursor: pointer;
+                                &:hover {
+                                    box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
+                                    border-radius: 25px;
+                                }
+                            }
+                            .remove-icon {
+                                font-size: 35px;
+                                color: #e02626;
+                                cursor: pointer;
                             }
                         }
-                        .remove-icon {
-                            font-size: 35px;
-                            color: #e02626;
-                            cursor: pointer;
+                    }
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                }
+            }
+            
+             ::-webkit-scrollbar {
+                width: 5px;
+                height: 5px;
+            }
+            
+             ::-webkit-scrollbar-track {
+                background: #FFFFFF;
+            }
+            
+             ::-webkit-scrollbar-thumb {
+                background: #C1C1C1;
+            }
+            
+            @media screen and (max-width: 550px) {
+                .search-container {
+                    .game {
+                        input[type=button] {
+                            min-width: 160px;
+                            max-width: 160px;
+                        }
+                    }
+                }
+                .card-container {
+                    .card {
+                        min-width: 325px;
+                        max-width: 325px;
+                        .body {
+                            .image {
+                                display: none;
+                            }
                         }
                     }
                 }
             }
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-         ::-webkit-scrollbar {
-            width: 5px;
-            height: 5px;
-        }
-        
-         ::-webkit-scrollbar-track {
-            background: #FFFFFF;
-        }
-        
-         ::-webkit-scrollbar-thumb {
-            background: #C1C1C1;
-        }

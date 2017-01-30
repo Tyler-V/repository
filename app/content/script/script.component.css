@@ -5,12 +5,12 @@
   display: -moz-flex;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-.container {
+.search-container {
   flex: auto;
   height: 100%;
   background-color: #DDDDDD;
@@ -19,11 +19,11 @@
   border: 1px solid #8D8D8D;
   overflow: hidden;
 }
-.container .game {
+.search-container .game {
   padding: 10px 10px 5px 10px;
   border-bottom: 1px solid #8D8D8D;
 }
-.container .game input[type=button] {
+.search-container .game input[type=button] {
   flex: auto;
   height: 31px;
   min-width: 80px;
@@ -34,34 +34,34 @@
   background-color: #FFFFFF;
   border: 1px solid #A9A9A9;
 }
-.container .game input[type=button]:hover {
+.search-container .game input[type=button]:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
 }
-.container .text {
+.search-container .text {
   padding: 10px 10px 5px 10px;
   border-bottom: 1px solid #8D8D8D;
 }
-.container .text input {
+.search-container .text input {
   height: 25px;
   width: 156px;
   text-align: center;
   position: relative;
   margin: 0 10px 5px 10px;
 }
-.container .select {
+.search-container .select {
   padding: 10px 10px 5px 10px;
 }
-.container .select select {
+.search-container .select select {
   height: 31px;
   width: 160px;
   text-align-last: center;
   color: #9C9C9C;
   margin: 0 10px 5px 10px;
 }
-.container:hover {
+.search-container:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
 }
-.flex {
+.card-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -72,88 +72,116 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+.card-container .card {
+  flex: auto;
+  height: 100%;
+  min-width: 425px;
+  max-width: 425px;
+  margin: 15px;
+  background-color: #FFFFFF;
+  border: 1px solid #8D8D8D;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.flex .card {
-  flex: auto;
-  height: 100%;
-  min-width: 325px;
-  max-width: 325px;
-  margin: 15px;
-  background-color: #FFFFFF;
-  border: 1px solid #8D8D8D;
-}
-.flex .card:hover {
+.card-container .card:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22);
 }
-.flex .card .title {
-  padding: 15px 0;
+.card-container .card .title {
+  height: 30px;
+  line-height: 30px;
+  padding: 5px 5px 0 5px;
   text-align: center;
-  font-size: 30px;
-  border-bottom: 1px solid #8D8D8D;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
   color: #FFFFFF;
 }
-.flex .card .body {
+.card-container .card .title label {
+  position: relative;
+  top: 3px;
+  font-size: 24px;
+  margin-right: 10px;
+}
+.card-container .card .author {
+  text-align: right;
+  border-bottom: 1px solid #8D8D8D;
+  height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #FFFFFF;
+}
+.card-container .card .author label {
+  position: relative;
+  bottom: 5px;
+  right: 3px;
+  font-size: 12px;
+}
+.card-container .card .body {
   height: 150px;
   border-bottom: 1px solid #8D8D8D;
 }
-.flex .card .body .description {
+.card-container .card .body .image {
+  float: left;
+  height: 150px;
+  width: 150px;
+  border-right: 1px solid #8D8D8D;
+}
+.card-container .card .body .description {
   height: 130px;
   overflow: auto;
   padding: 10px;
-  word-break: break-word;
   background-color: #e8e8e8;
+  font-size: 13px;
+  word-break: break-word;
 }
-.flex .card .footer {
+.card-container .card .footer {
   height: 50px;
 }
-.flex .card .footer .pricing {
+.card-container .card .footer .pricing {
   float: left;
   position: relative;
   top: 7px;
   left: 15px;
 }
-.flex .card .footer .pricing .price {
+.card-container .card .footer .pricing .price {
   /*color: #078e00;*/
   font-size: 18px;
 }
-.flex .card .footer .pricing .duration {
+.card-container .card .footer .pricing .duration {
   font-size: 10px;
   position: relative;
   left: 3px;
 }
-.flex .card .footer .actions {
+.card-container .card .footer .actions {
   float: right;
   position: relative;
   top: 7px;
   right: 15px;
 }
-.flex .card .footer .actions .info-icon {
+.card-container .card .footer .actions .info-icon {
   font-size: 35px;
-  color: #8D8D8D;
+  color: #CCCCCC;
   cursor: pointer;
   margin-right: 3px;
 }
-.flex .card .footer .actions .info-icon:hover {
+.card-container .card .footer .actions .info-icon:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
   border-radius: 25px;
 }
-.flex .card .footer .actions .add-icon {
+.card-container .card .footer .actions .add-icon {
   font-size: 35px;
   color: #2264AE;
   cursor: pointer;
 }
-.flex .card .footer .actions .add-icon:hover {
+.card-container .card .footer .actions .add-icon:hover {
   box-shadow: 0 7.5px 15px rgba(0, 0, 0, 0.19), 0 5px 10px rgba(0, 0, 0, 0.22) !important;
   border-radius: 25px;
 }
-.flex .card .footer .actions .remove-icon {
+.card-container .card .footer .actions .remove-icon {
   font-size: 35px;
   color: #e02626;
   cursor: pointer;
@@ -167,4 +195,17 @@
 }
 ::-webkit-scrollbar-thumb {
   background: #C1C1C1;
+}
+@media screen and (max-width: 550px) {
+  .search-container .game input[type=button] {
+    min-width: 160px;
+    max-width: 160px;
+  }
+  .card-container .card {
+    min-width: 325px;
+    max-width: 325px;
+  }
+  .card-container .card .body .image {
+    display: none;
+  }
 }

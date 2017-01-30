@@ -1,5 +1,5 @@
 <div class="flex">
-    <div class="container">
+    <div class="search-container">
         <div class="game flex">
             <input type="button" value="All">
             <input type="button" value="Oldschool">
@@ -51,29 +51,39 @@
 </div>
 
 <div class="flex">
-    <div *ngFor="let r of repeat | repeat; let i = index;" class="card shadow-1">
-        <div class="title" [style.background-color]="colors[i]">Lorem Ipsum</div>
-        <div class="body">
-            <div class="description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi mauris. Sed mauris nisl, gravida consectetur sollicitudin
-                quis, mollis id lorem. Morbi euismod in quam eget pellentesque. Nunc semper ac felis sit amet laoreet. Pellentesque
-                cursus condimentum tempus. Nulla semper bibendum mi, in bibendum nisl tempor a. Etiam tincidunt viverra tortor.
-                Sed vel venenatis ipsum, ac pretium nibh. Etiam vitae pretium quam. Etiam condimentum cursus augue in efficitur.
-                Cras auctor erat at neque sollicitudin, a rhoncus orci tristique. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Nam tincidunt tincidunt porta. Suspendisse in lacinia leo. Donec metus risus, maximus posuere
-                lectus vulputate, condimentum lobortis nunc. Phasellus massa nibh, volutpat at mauris quis, dignissim mollis
-                justo.
+    <div class="card-container">
+        <div *ngFor="let r of repeat | repeat; let i = index;" class="card shadow-1">
+            <div class="title" [style.background-color]="colors[i]">
+                <label>Lorem Ipsum</label>
             </div>
-        </div>
-        <div class="footer">
-            <div class="pricing">
-                <div class="price">$0.00</div>
-                <div class="duration">Per Month</div>
+            <div class="author" [style.background-color]="colors[i]">
+                <label>By Author</label>
             </div>
-            <div class="actions">
-                <i class="material-icons info-icon">info</i>
-                <i class="material-icons add-icon" [style.color]="colors[i]">add_circle</i>
-                <!--<i class="material-icons remove-icon">remove_circle</i>-->
+            <div class="body">
+                <div class="image">
+                    <img src="./resources/img/150x150.png">
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi mauris. Sed mauris nisl, gravida consectetur sollicitudin
+                    quis, mollis id lorem. Morbi euismod in quam eget pellentesque. Nunc semper ac felis sit amet laoreet.
+                    Pellentesque cursus condimentum tempus. Nulla semper bibendum mi, in bibendum nisl tempor a. Etiam tincidunt
+                    viverra tortor. Sed vel venenatis ipsum, ac pretium nibh. Etiam vitae pretium quam. Etiam condimentum
+                    cursus augue in efficitur. Cras auctor erat at neque sollicitudin, a rhoncus orci tristique. Lorem ipsum
+                    dolor sit amet, consectetur adipiscing elit. Nam tincidunt tincidunt porta. Suspendisse in lacinia leo.
+                    Donec metus risus, maximus posuere lectus vulputate, condimentum lobortis nunc. Phasellus massa nibh,
+                    volutpat at mauris quis, dignissim mollis justo.
+                </div>
+            </div>
+            <div class="footer">
+                <div class="pricing">
+                    <div class="price">$0.00</div>
+                    <div class="duration">Per Month</div>
+                </div>
+                <div class="actions">
+                    <i class="material-icons info-icon">info</i>
+                    <i class="material-icons add-icon" [style.color]="colors[i]">add_circle</i>
+                    <!--<i class="material-icons remove-icon">remove_circle</i>-->
+                </div>
             </div>
         </div>
     </div>
